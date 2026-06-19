@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4imtuv3rludy"]
+
+[ext_resource type="Script" uid="uid://chwqd0d2ttqnq" path="res://scripts/hamster_ui.gd" id="1_apgft"]
+[ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_ejryl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(128, 128)
+
+[node name="HamsterUI" type="Node2D" unique_id=997477288]
+script = ExtResource("1_apgft")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=768299108]
+texture = ExtResource("1_ejryl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2094754665]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949272873]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

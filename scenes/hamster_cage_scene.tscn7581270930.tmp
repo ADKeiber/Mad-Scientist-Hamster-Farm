@@ -10,7 +10,6 @@ offset_right = -0.36010742
 offset_bottom = 0.519989
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_j6b20")
 
 [node name="Panel" type="Panel" parent="." unique_id=1442103467]
@@ -18,7 +17,6 @@ custom_minimum_size = Vector2(1500, 250)
 layout_mode = 0
 offset_right = 1500.0
 offset_bottom = 250.0
-mouse_filter = 2
 
 [node name="HamsterSlots" type="HBoxContainer" parent="Panel" unique_id=1399230022]
 unique_name_in_owner = true
@@ -26,10 +24,16 @@ custom_minimum_size = Vector2(1500, 250)
 layout_mode = 0
 offset_right = 1500.0
 offset_bottom = 250.0
-mouse_filter = 2
 alignment = 1
 
 [node name="Control" type="Control" parent="Panel/HamsterSlots" unique_id=937089196]
 layout_mode = 2
 size_flags_horizontal = 3
-mouse_filter = 2
+
+[node name="Button" type="Button" parent="." unique_id=1014194774]
+layout_mode = 0
+offset_left = -163.0
+offset_top = 64.0
+offset_right = -12.0
+offset_bottom = 181.0
+text = "Generate Hamster"
