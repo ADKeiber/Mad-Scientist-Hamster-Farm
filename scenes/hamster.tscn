@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(128, 128)
 
-[node name="HamsterUI" type="Node2D" unique_id=997477288]
+[node name="HamsterUI" type="Node2D" unique_id=997477288 groups=["HamsterUI"]]
 script = ExtResource("1_apgft")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=768299108]
@@ -17,4 +17,6 @@ texture = ExtResource("1_ejryl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949272873]
 shape = SubResource("RectangleShape2D_g4v7s")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
