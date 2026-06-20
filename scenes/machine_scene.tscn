@@ -2,9 +2,9 @@
 
 [node name="MachineScene" type="Control" unique_id=1183329259]
 layout_mode = 3
-anchor_right = 0.31300002
+anchor_right = 0.365
 anchor_bottom = 0.37100002
-offset_right = 99.03998
+offset_right = -0.8000488
 offset_bottom = -0.6800232
 grow_horizontal = 2
 grow_vertical = 2
