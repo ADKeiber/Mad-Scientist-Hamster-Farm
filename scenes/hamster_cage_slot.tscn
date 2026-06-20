@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cfa6g02i7uqa2"]
 
 [ext_resource type="Script" uid="uid://objjn5utpcpi" path="res://scripts/hamster_cage_slot.gd" id="1_2mkre"]
-[ext_resource type="PackedScene" uid="uid://d4imtuv3rludy" path="res://scenes/hamster.tscn" id="2_u6nx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(192, 191)
@@ -18,7 +17,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_2mkre")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=13849582]
+[node name="Area2D" type="Area2D" parent="." unique_id=13849582 groups=["CageSlot"]]
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1895641260]
@@ -34,6 +33,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Hamster" parent="." unique_id=997477288 instance=ExtResource("2_u6nx1")]
-visible = false
