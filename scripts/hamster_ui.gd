@@ -3,7 +3,7 @@ extends Node2D
 
 signal picked_up
 
-var stats: HamsterStats
+var stats: HamsterStats = preload("res://resources/basic_hamster.tres")
 var dragging: bool
 var amount: int = 0
 var drag_offset := Vector2.ZERO
