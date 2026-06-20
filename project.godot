@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mad Scientist Hamster Farm"
-run/main_scene="uid://dxfw2gq4y6cxy"
+run/main_scene="uid://2emas1q80pqm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,9 +21,11 @@ GScript="*uid://bcptskl43tu3w"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/initial_position_type=0
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -31,6 +33,7 @@ window/stretch/aspect="expand"
 
 CageSlot="Slot where the hamsters live"
 HamsterUI=""
+Wheel=""
 
 [input]
 

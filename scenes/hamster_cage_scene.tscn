@@ -3,29 +3,32 @@
 [ext_resource type="Script" uid="uid://co065w3eqk25r" path="res://scripts/hamster_cage_scene.gd" id="1_j6b20"]
 
 [node name="HamsterCageScene" type="Control" unique_id=325820934]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 3
-anchor_right = 0.78300005
-anchor_bottom = 0.231
-offset_right = -0.36010742
-offset_bottom = 0.519989
+anchor_right = 1.0
+anchor_bottom = 0.083000004
+offset_bottom = -29.880001
 grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_j6b20")
 
 [node name="Panel" type="Panel" parent="." unique_id=1442103467]
-custom_minimum_size = Vector2(1500, 250)
-layout_mode = 0
-offset_right = 1500.0
-offset_bottom = 250.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="HamsterSlots" type="HBoxContainer" parent="Panel" unique_id=1399230022]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(1500, 250)
-layout_mode = 0
-offset_right = 1500.0
-offset_bottom = 250.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 

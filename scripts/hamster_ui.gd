@@ -1,6 +1,8 @@
 class_name HamsterUI
 extends Node2D
 
+signal picked_up
+
 var stats: HamsterStats
 var dragging: bool
 var amount: int = 0
@@ -19,6 +21,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			if event.pressed:
 				dragging = true
 				slot_position = global_position
+				self.modulate.a = 1 # Makes hamster visible when picked up by changing opacity to 1
+				picked_up.emit()
 			else:
 				dragging = false
 				print(target)
@@ -31,6 +35,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 					print("Nothing implemented for Maching modules... yet!")
 				elif target.is_in_group("Wheel"): #3: Wheel... Hamster snaps to wheel AND wheel starts generating
 					print(3)
+					if target.get_parent() is HamsterWheelSlot: 
+						target.get_parent().reparent_hamster(self)
 					print("Nothing implemented for Wheel... yet!")
 				elif target.is_in_group("CageSlot"): #4: Cage Slot... hamster snaps to cage slot and starts regening stamina 
 					print(4)
@@ -46,3 +52,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	target = null
+	
+func _ready() -> void:
+	$AnimatedSprite2D.play("idle")
