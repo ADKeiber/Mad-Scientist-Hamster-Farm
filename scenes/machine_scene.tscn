@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duon3nnllt7rg"]
 
 [ext_resource type="Script" uid="uid://cpajfmhxdu8bv" path="res://scripts/power_bar.gd" id="1_cfiw6"]
+[ext_resource type="PackedScene" uid="uid://rhqem0bpk83i" path="res://scenes/machine_module_slot.tscn" id="1_r258f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgf6b"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,6 +17,7 @@ offset_right = -0.8000488
 offset_bottom = -0.6800232
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1811370278]
 layout_mode = 1
@@ -24,31 +26,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="Panel" type="Panel" parent="HBoxContainer" unique_id=1782683585]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=892536955]
+[node name="MachineRows" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=892536955]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/Panel/VBoxContainer" unique_id=2115086297]
+[node name="Label" type="Label" parent="HBoxContainer/Panel/MachineRows" unique_id=976898241]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Machine"
+text = "Energy Gen Bar"
 horizontal_alignment = 1
 
-[node name="PowerBar" type="ProgressBar" parent="HBoxContainer" unique_id=175485096]
+[node name="HamsterModuleRow1" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=240310984]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=231512727 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=491092834 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=1410786303 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="HamsterModuleRow2" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=927326451]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=769799803 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=1934691684 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=168099881 instance=ExtResource("1_r258f")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Panel/MachineRows" unique_id=252763631]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ProjectModuleRow1" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=1493681682]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=1926702278]
+layout_mode = 2
+text = "hello"
+
+[node name="ExcessPowerBar" type="ProgressBar" parent="HBoxContainer" unique_id=175485096]
 custom_minimum_size = Vector2(15, 0)
 layout_mode = 2
 size_flags_vertical = 1
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_vgf6b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wnun6")
 value = 30.0
