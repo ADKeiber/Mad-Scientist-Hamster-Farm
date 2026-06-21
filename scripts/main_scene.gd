@@ -9,10 +9,10 @@ func _ready() -> void:
 	hamster_cage_scene.generate_slots_and_hamsters()
 
 #this exists just for debugging... Allows me to print exactly what is being clicked
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		var hovered = get_viewport().gui_get_hovered_control()
-		print("Hovered Control: ", hovered)
+#func _input(event):
+	#if event is InputEventMouseButton and event.pressed:
+		#var hovered = get_viewport().gui_get_hovered_control()
+		#print("Hovered Control: ", hovered)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
