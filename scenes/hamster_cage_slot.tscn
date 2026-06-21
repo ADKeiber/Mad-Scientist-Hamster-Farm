@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://objjn5utpcpi" path="res://scripts/hamster_cage_slot.gd" id="1_2mkre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(66, 67)
+size = Vector2(67, 67)
 
 [node name="HamsterCageSlot" type="Control" unique_id=1976614969 groups=["CageSlot"]]
 custom_minimum_size = Vector2(30, 30)
@@ -21,7 +21,7 @@ script = ExtResource("1_2mkre")
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1895641260]
-position = Vector2(34, 33.5)
+position = Vector2(33.5, 33.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Panel" type="Panel" parent="." unique_id=1645221691]
