@@ -8,5 +8,3 @@ var power_generated : float = 0
 var power_drain : float = 0.01
 var hamster_watts_produced : int = 0
 var hamster_watts_min : int = 0
-var minimum_required_power: int
-var current_power_output: int
