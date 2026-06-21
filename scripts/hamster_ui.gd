@@ -53,7 +53,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	target = area
 
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	target = null
 	

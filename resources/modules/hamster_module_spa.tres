@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SpaModule" format=3 uid="uid://om17syoayrnb"]
+
+[ext_resource type="Script" uid="uid://ctm75tktsh6it" path="res://scripts/modules/spa_module.gd" id="1_hinfj"]
+
+[resource]
+script = ExtResource("1_hinfj")
+metadata/_custom_type_script = "uid://ctm75tktsh6it"

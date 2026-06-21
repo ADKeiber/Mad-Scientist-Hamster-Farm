@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b064f2r4o1m4m"]
+
+[ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_qboyq"]
+
+[node name="MachineModuleOption" type="HBoxContainer" unique_id=1107065799]
+custom_minimum_size = Vector2(200, 30)
+custom_maximum_size = Vector2(200, 30)
+anchors_preset = -1
+anchor_left = -0.020000001
+anchor_top = -0.007
+anchor_right = -0.020000001
+anchor_bottom = -0.007
+offset_left = 0.30000114
+offset_top = 0.01999998
+offset_right = 200.3
+offset_bottom = 30.02
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1571814977]
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_qboyq")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=349977508]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 8
+text = "This is sample text to describe the module"
+vertical_alignment = 1

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bw4s34mn2pwis"]
+
+[ext_resource type="PackedScene" uid="uid://b064f2r4o1m4m" path="res://scenes/machine_module_option.tscn" id="1_840d8"]
+
+[node name="AvailableModulesPopup" type="PanelContainer" unique_id=608306954]
+anchors_preset = -1
+anchor_right = 0.312
+anchor_bottom = 0.367
+offset_right = 0.31999207
+offset_bottom = -0.120010376
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=926511199]
+layout_mode = 2
+
+[node name="MachineModuleOption" parent="VBoxContainer" unique_id=1107065799 instance=ExtResource("1_840d8")]
+layout_mode = 2
+
+[node name="MachineModuleOption2" parent="VBoxContainer" unique_id=2141583629 instance=ExtResource("1_840d8")]
+layout_mode = 2
+
+[node name="MachineModuleOption3" parent="VBoxContainer" unique_id=767975178 instance=ExtResource("1_840d8")]
+layout_mode = 2
+
+[node name="MachineModuleOption4" parent="VBoxContainer" unique_id=960063779 instance=ExtResource("1_840d8")]
+layout_mode = 2
