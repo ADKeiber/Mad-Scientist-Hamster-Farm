@@ -9,6 +9,7 @@ var amount: int = 0
 var drag_offset := Vector2.ZERO
 var slot_position := Vector2.ZERO
 var target: Area2D
+enum State {IDLE, RUNNING}
 
 func _process(delta):
 	if dragging:
@@ -21,7 +22,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			if event.pressed:
 				dragging = true
 				slot_position = global_position
-				self.modulate.a = 1 # Makes hamster visible when picked up by changing opacity to 1
 				picked_up.emit()
 			else:
 				dragging = false
@@ -47,6 +47,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				else:
 					print("landed on something that isn't part of a group... Targets groups: ", target.get_groups())
 					global_position = slot_position
+					self.get_parent().reparent_hamster(self)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	target = area
@@ -58,6 +59,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
+func change_states(state) -> void:
+	if state == State.IDLE:
+		$AnimatedSprite2D.show()
+	
+	elif state == State.RUNNING:
+		$AnimatedSprite2D.hide()
+		GScript.power_generated += stats.speed * 0.01
+		GScript.hamster_watts_produced += stats.speed * 10
 
 	
 func check_child_type(node, type) -> bool:

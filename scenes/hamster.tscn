@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chwqd0d2ttqnq" path="res://scripts/hamster_ui.gd" id="1_apgft"]
 [ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/Hamster Idle.png" id="2_apgft"]
+[ext_resource type="Script" uid="uid://dpp72q2h1xghe" path="res://scripts/stamina_bar.gd" id="3_tpwgc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpwgc"]
 atlas = ExtResource("2_apgft")
@@ -39,6 +40,16 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949272873]
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=744683686]
+offset_left = 19.0
+offset_top = -15.0
+offset_right = 26.0
+offset_bottom = 15.0
+value = 100.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("3_tpwgc")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

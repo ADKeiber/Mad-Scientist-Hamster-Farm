@@ -8,17 +8,17 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 	print("Reparent")
 	hamster.reparent(self)
 	hamster.position = self.size / 2.0
-	hamster.modulate.a = 0 # Hides the hamster by changing the opacity to 0
+	hamster.change_states(1)
 	$"Panel/Hamster Wheel".power_wheel() ##start wheel animation
 	_hamster = hamster
 	hamster.picked_up.connect(self.hamster_picked_up)
-	GScript.power_generated += hamster.stats.speed * 0.01
-	GScript.hamster_watts_produced += hamster.stats.speed * 10
+
 	
 	
 # Stops the wheel animation
 func hamster_picked_up() -> void:
 	$"Panel/Hamster Wheel".power_off()
+	_hamster.change_states(0)
 	GScript.power_generated -= _hamster.stats.speed * 0.01
 	GScript.hamster_watts_produced -= _hamster.stats.speed * 10
 	# disconnect hamster from this specific wheel
