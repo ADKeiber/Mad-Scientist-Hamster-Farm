@@ -27,9 +27,10 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				dragging = false
 				print(target)
 				#TODO determine which TYPE of location we are dropping on.. There are 4 options 
-				if target == null: #1: Nothing... This should make it snap back to original location
+				if target == null or target.get_parent() == HamsterUI or check_child_type(target.get_parent(), HamsterUI): #1: Nothing... This should make it snap back to original location
 					print(1)
 					global_position = slot_position
+					self.get_parent().reparent_hamster(self)
 				elif target.is_in_group("MachineModule"): #2: Module... The hamster needs to go into the module AND an effect triggers
 					print(2)
 					print("Nothing implemented for Maching modules... yet!")
@@ -37,14 +38,15 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 					print(3)
 					if target.get_parent() is HamsterWheelSlot: 
 						target.get_parent().reparent_hamster(self)
-					print("Nothing implemented for Wheel... yet!")
+						slot_position = global_position
 				elif target.is_in_group("CageSlot"): #4: Cage Slot... hamster snaps to cage slot and starts regening stamina 
 					print(4)
 					if target.get_parent() is HamsterCageSlot:
 						target.get_parent().reparent_hamster(self)
+						slot_position = global_position
 				else:
 					print("landed on something that isn't part of a group... Targets groups: ", target.get_groups())
-
+					global_position = slot_position
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	target = area
@@ -55,3 +57,11 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+
+
+	
+func check_child_type(node, type) -> bool:
+	for child in node.get_children():
+		if is_instance_of(child, type):
+			return true
+	return false
