@@ -33,7 +33,7 @@ func stamina_drained() -> void:
 		if drained == false and hamster.hamster_state == hamster.State.RUNNING:
 			$Timer.start()
 			drained = true
-	elif value > 0: 
+	if value > 0 or hamster.hamster_state != hamster.State.RUNNING: 
 		if drained == true:
 			$Timer.stop()
 			drained = false
