@@ -80,3 +80,15 @@ func check_child_type(node, type) -> bool:
 		if is_instance_of(child, type):
 			return true
 	return false
+
+#Triggers damagage chance
+func _on_stamina_bar_damage() -> void:
+	$HealthPipsContainer.take_damage()
+
+#Disconnect hamster kill it
+func _on_health_pips_container_death() -> void:
+	picked_up.emit()
+	$Area2D.hide()
+	$AnimationPlayer.play("death")
+	await $AnimationPlayer.animation_finished
+	queue_free()
