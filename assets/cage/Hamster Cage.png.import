@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crvl2jo04bkny"
-path="res://.godot/imported/Wheel Animation.png-47d4bb303e1532e4c2dce2a86229e99a.ctex"
+uid="uid://dkf3kkeivn2bx"
+path="res://.godot/imported/Hamster Cage.png-b32d42253aaf41292073e16e6ebd643e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wheel Animation.png"
-dest_files=["res://.godot/imported/Wheel Animation.png-47d4bb303e1532e4c2dce2a86229e99a.ctex"]
+source_file="res://assets/cage/Hamster Cage.png"
+dest_files=["res://.godot/imported/Hamster Cage.png-b32d42253aaf41292073e16e6ebd643e.ctex"]
 
 [params]
 
