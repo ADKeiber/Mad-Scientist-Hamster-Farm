@@ -1,4 +1,5 @@
 extends HBoxContainer
+signal death
 
 @onready var health_pip_scene = preload("res://scenes/hamster/health_pip.tscn")
 @onready var hamster : HamsterUI = $".."
@@ -16,8 +17,7 @@ func take_damage() -> void:
 	current_health -= 1
 	get_child(0).queue_free()
 	if current_health == 0:
-		death()
+		death.emit()
 
-func death() -> void: #removes hamster TODO add animation
-	hamster.queue_free()
-	hamster.picked_up.emit()
+
+	

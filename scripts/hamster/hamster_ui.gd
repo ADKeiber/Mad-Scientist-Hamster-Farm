@@ -84,3 +84,10 @@ func check_child_type(node, type) -> bool:
 
 func _on_stamina_bar_damage() -> void:
 	$HealthPipsContainer.take_damage()
+
+
+func _on_health_pips_container_death() -> void:
+	picked_up.emit()
+	$AnimationPlayer.play("death")
+	await $AnimationPlayer.animation_finished
+	queue_free()
