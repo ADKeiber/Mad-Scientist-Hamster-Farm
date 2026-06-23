@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StatModifierModule" format=3 uid="uid://bvx4eoipik58s"]
 
 [ext_resource type="Script" uid="uid://bfpeurr0lvwxo" path="res://scripts/modules/stat_modifier_module.gd" id="1_p8110"]
-[ext_resource type="Texture2D" uid="uid://ix5m3p0jet5w" path="res://assets/machine/redXs/redx4.png" id="2_58rth"]
+[ext_resource type="Texture2D" uid="uid://bclkqy7j4ms7k" path="res://assets/modules/Stat Modifier Module.png" id="2_58rth"]
 
 [resource]
 script = ExtResource("1_p8110")
@@ -10,4 +10,5 @@ module_description = "Allows upgrade of specific hamster stat"
 power_cost = 500
 texture = ExtResource("2_58rth")
 min_power_increase = 10
+interactable = true
 metadata/_custom_type_script = "uid://bfpeurr0lvwxo"

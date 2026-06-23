@@ -6,7 +6,7 @@ const HAMSTER_CAGE_SLOT = preload("res://scenes/cage/hamster_cage_slot.tscn")
 const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 
 func _ready() -> void:
-	GScript.add_wheel.connect(add_hamster_slot)
+	GScript.add_hamster_slot.connect(add_hamster_slot)
 
 # Called when the node enters the scene tree for the first time.
 func generate_slots_and_hamsters() -> void:

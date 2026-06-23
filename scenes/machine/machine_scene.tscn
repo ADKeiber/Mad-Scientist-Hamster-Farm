@@ -15,6 +15,7 @@ mouse_filter = 2
 script = ExtResource("1_soh53")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1811370278]
+custom_minimum_size = Vector2(125, 150)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +41,7 @@ mouse_filter = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/Panel/MachineRows" unique_id=976898241]
+visible = false
 layout_mode = 2
 text = "Energy Gen Bar"
 horizontal_alignment = 1

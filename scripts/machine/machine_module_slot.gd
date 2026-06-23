@@ -32,7 +32,11 @@ func _gui_input(event: InputEvent) -> void:
 				if not module_option_popup.visible:
 					GScript.close_popups.emit()
 					#z_index = 1
-				module_option_popup.visible = not module_option_popup.visible
+				if module_option_popup.visible:
+					module_option_popup.visible = false
+				elif current_module == null:
+					module_option_popup.visible = true
+				#module_option_popup.visible = not module_option_popup.visible
 				if module_option_popup.visible:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100
