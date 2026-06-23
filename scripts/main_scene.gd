@@ -9,6 +9,7 @@ extends Control
 func _ready() -> void:
 	GScript.roster = starting_hamsters
 	hamster_cage_scene.generate_slots_and_hamsters()
+	hamster_wheels_scene.setup_wheels()
 	#hamster_wheels_scene.generate_wheels()
 	GScript.all_modules = all_modules
 	GScript.win_game.connect(win_game)

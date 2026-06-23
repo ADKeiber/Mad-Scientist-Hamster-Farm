@@ -100,7 +100,10 @@ func _on_health_pips_container_death() -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	stats_menu.show()
+	if dragging == true:
+		stats_menu.hide()
+	else: 
+		stats_menu.show()
 
 
 func _on_area_2d_mouse_exited() -> void:

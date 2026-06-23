@@ -13,8 +13,8 @@ anchor_right = 0.104
 anchor_bottom = 0.185
 offset_right = 0.31999207
 offset_bottom = 0.19999695
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_d3qqk")
 
