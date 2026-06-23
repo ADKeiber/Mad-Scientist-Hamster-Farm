@@ -8,4 +8,5 @@ func start_module() -> void:
 	print("Previous capacity: ", GScript.battery_capacity)
 	GScript.battery_capacity = GScript.battery_capacity + amount_to_increase
 	print("New capacity: ", GScript.battery_capacity)
-	GScript.hamster_watts_min += min_power_increase
+	GScript.hamster_watts_min = GScript.hamster_watts_min + min_power_increase
+	GScript.update_battery_capacity.emit()

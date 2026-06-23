@@ -37,9 +37,10 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -115.0
-offset_right = 109.0
-offset_bottom = 125.0
+offset_left = -111.0
+offset_top = 17.0
+offset_right = 113.0
+offset_bottom = 142.0
 grow_vertical = 1
 
 [node name="HamsterCageScene" parent="." unique_id=325820934 instance=ExtResource("2_7ykc4")]
@@ -55,6 +56,7 @@ offset_right = 0.8798828
 offset_bottom = -3.8400269
 
 [node name="HamsterWheelsScene" parent="." unique_id=1881528995 instance=ExtResource("3_pu3yx")]
+unique_name_in_owner = true
 layout_mode = 1
 anchor_left = 0.104
 anchor_top = 0.45100003
@@ -73,5 +75,5 @@ offset_right = 143.0
 offset_bottom = 85.945
 
 [node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
-position = Vector2(421, 2)
+position = Vector2(458.00003, 8)
 scale = Vector2(1.0042132, 1.0827338)

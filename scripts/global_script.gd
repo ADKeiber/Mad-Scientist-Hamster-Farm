@@ -5,9 +5,10 @@ signal unlock_module(slot_num:int, is_project_module:bool)
 signal win_game
 signal add_wheel
 signal add_hamster_slot
+signal update_battery_capacity
 
 var roster_limit: int = 4
-var num_of_wheels: int
+var num_of_wheels: int = 2
 var roster: Array[HamsterStats]
 var power_stored : int
 var hamster_watts_produced : int = 0

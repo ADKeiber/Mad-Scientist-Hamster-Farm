@@ -7,7 +7,7 @@
 size = Vector2(65, 67)
 
 [node name="HamsterWheelSlot" type="Control" unique_id=1976614969 groups=["Wheel"]]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchor_right = 0.104
 anchor_bottom = 0.185
