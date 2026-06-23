@@ -3,6 +3,8 @@ extends Node2D
 
 signal picked_up
 
+@export var stats_menu : Control
+
 var stats: HamsterStats = preload("res://resources/basic_hamster.tres")
 var dragging: bool
 var amount: int = 0
@@ -56,6 +58,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	target = null
 	
+
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
@@ -92,3 +96,11 @@ func _on_health_pips_container_death() -> void:
 	$AnimationPlayer.play("death")
 	await $AnimationPlayer.animation_finished
 	queue_free()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	stats_menu.show()
+
+
+func _on_area_2d_mouse_exited() -> void:
+	stats_menu.hide()

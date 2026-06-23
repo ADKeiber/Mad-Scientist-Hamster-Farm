@@ -24,9 +24,9 @@ func stamina_change() -> void:
 	if hamster.hamster_state == hamster.State.IDLE:
 		change = 0
 	elif hamster.hamster_state == hamster.State.RUNNING:
-		change = - 0.2
+		change = - 0.1
 	elif hamster.hamster_state == hamster.State.RESTING:
-		change = 0.2
+		change = 0.1
 	
 func stamina_drained() -> void:
 	if value == 0:

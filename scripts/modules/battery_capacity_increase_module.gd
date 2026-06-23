@@ -5,7 +5,7 @@ extends MachineModule
 
 func start_module() -> void:
 	print("Increasing battery capacity..")
-	print("Previous capacity: ", GScript.batter_capacity)
-	GScript.batter_capacity = GScript.batter_capacity + amount_to_increase
-	print("New capacity: ", GScript.batter_capacity)
-	GScript.hamster_watts_min = GScript.hamster_watts_min + min_power_increase
+	print("Previous capacity: ", GScript.battery_capacity)
+	GScript.battery_capacity = GScript.battery_capacity + amount_to_increase
+	print("New capacity: ", GScript.battery_capacity)
+	GScript.hamster_watts_min += min_power_increase
