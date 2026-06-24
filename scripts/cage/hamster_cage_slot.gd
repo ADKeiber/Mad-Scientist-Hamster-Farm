@@ -30,3 +30,20 @@ func hamster_picked_up() -> void:
 	if _hamster.picked_up.is_connected(self.hamster_picked_up): 
 		_hamster.picked_up.disconnect(self.hamster_picked_up)
 	_hamster = null 
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("left_mouse"):
+		if check_child_type() == false:
+			$AddHamsterMenu.show()
+
+
+func check_child_type() -> bool:
+	for child in self.get_children():
+		if is_instance_of(child, HamsterUI):
+			return true
+	return false
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
