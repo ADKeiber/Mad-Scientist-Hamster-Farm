@@ -3,6 +3,7 @@ extends Control
 const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 var _hamster : HamsterUI
 
+
 func add_hamster(stats:HamsterStats) -> void:
 	var hamster: HamsterUI = HAMSTER.instantiate()
 	#TODO set hamster_ui sprite possibly?
@@ -31,11 +32,12 @@ func hamster_picked_up() -> void:
 		_hamster.picked_up.disconnect(self.hamster_picked_up)
 	_hamster = null 
 
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("left_mouse"):
-		if check_child_type() == false:
-			$AddHamsterMenu.show()
+func _on_gui_input(event: InputEvent) -> void: #opens add hamster menu
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if check_child_type() == false:
+				if get_tree().get_node_count_in_group("HamsterUI") < GScript.roster_limit:
+					$AddHamsterMenu.show()
 
 
 func check_child_type() -> bool:
@@ -45,5 +47,14 @@ func check_child_type() -> bool:
 	return false
 
 
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
+func _on_add_hamster_pressed() -> void:
+	if GScript.current_battery_value >= 100:
+		add_hamster(GScript.roster[0])
+		GScript.current_battery_value -= 100
+		$AddHamsterMenu.hide()
+
+@export var button : Button
+func _process(delta: float) -> void: #disables button while curent power is too low to purchase
+	if GScript.current_battery_value < 100:
+		button.disabled = true
+	else: button.disabled = false

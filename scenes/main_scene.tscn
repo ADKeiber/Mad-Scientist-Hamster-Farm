@@ -18,6 +18,15 @@
 [ext_resource type="Resource" uid="uid://bqy2wqx1wy4jo" path="res://resources/modules/project_module_2.tres" id="12_bcnxi"]
 [ext_resource type="Resource" uid="uid://d3fm55mf6ga0o" path="res://resources/modules/project_module_3.tres" id="13_7nt27"]
 [ext_resource type="PackedScene" uid="uid://byh8jfcnyqs8m" path="res://scenes/machine/battery.tscn" id="18_bcnxi"]
+[ext_resource type="Texture2D" uid="uid://cdcj6418jv7qb" path="res://assets/wood tile.png" id="19_7nt27"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6f3i"]
+texture = ExtResource("19_7nt27")
+0:0/0 = 0
+0:0/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_lw7gp"]
+sources/0 = SubResource("TileSetAtlasSource_k6f3i")
 
 [node name="MainScene" type="Control" unique_id=600585959]
 layout_mode = 3
@@ -30,6 +39,7 @@ mouse_filter = 2
 script = ExtResource("1_pu3yx")
 starting_hamsters = Array[ExtResource("2_rt2n2")]([ExtResource("3_c16ls"), ExtResource("3_c16ls")])
 all_modules = Array[ExtResource("4_r6p65")]([ExtResource("5_si52b"), ExtResource("6_01n6w"), ExtResource("7_6u1mn"), ExtResource("8_bcnxi"), ExtResource("9_7nt27"), ExtResource("10_k6f3i"), ExtResource("11_6u1mn"), ExtResource("12_bcnxi"), ExtResource("13_7nt27")])
+metadata/_edit_horizontal_guides_ = [386.0]
 
 [node name="MachineScene" parent="." unique_id=1183329259 instance=ExtResource("1_w2twt")]
 layout_mode = 1
@@ -72,3 +82,6 @@ offset_bottom = 190.945
 [node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
 position = Vector2(472.00003, 61)
 scale = Vector2(1.0042132, 1.0827338)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=133945637]
+tile_set = SubResource("TileSet_lw7gp")
