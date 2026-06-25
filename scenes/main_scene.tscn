@@ -36,42 +36,39 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -115.0
-offset_right = 109.0
-offset_bottom = 125.0
-grow_vertical = 1
+offset_left = -119.0
+offset_top = -1.0
+offset_right = 126.0
+offset_bottom = 162.0
+grow_horizontal = 2
 
 [node name="HamsterCageScene" parent="." unique_id=325820934 instance=ExtResource("2_7ykc4")]
 unique_name_in_owner = true
 layout_mode = 1
-anchor_left = 0.104
-anchor_top = 0.73700005
-anchor_right = 0.88600004
-anchor_bottom = 0.96900004
-offset_left = -0.68000793
-offset_top = 5.6799927
-offset_right = 0.8798828
-offset_bottom = -3.8400269
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0
+grow_vertical = 0
 
 [node name="HamsterWheelsScene" parent="." unique_id=1881528995 instance=ExtResource("3_pu3yx")]
+unique_name_in_owner = true
 layout_mode = 1
-anchor_left = 0.104
 anchor_top = 0.45100003
-anchor_right = 0.8880001
-anchor_bottom = 0.68200004
-offset_left = -20.559998
-offset_top = -0.08004761
-offset_right = 11.679932
-offset_bottom = -12.52002
+anchor_bottom = 0.647
+offset_left = 111.0
+offset_top = 34.639984
+offset_right = -95.0
+offset_bottom = 34.800034
+grow_vertical = 0
 
 [node name="HamsterWattsUI" parent="." unique_id=113782197 instance=ExtResource("7_c16ls")]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 26.0
-offset_right = 143.0
-offset_bottom = 85.945
+offset_left = 39.0
+offset_top = 131.0
+offset_right = 139.0
+offset_bottom = 190.945
 
 [node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
-position = Vector2(421, 2)
+position = Vector2(472.00003, 61)
 scale = Vector2(1.0042132, 1.0827338)
