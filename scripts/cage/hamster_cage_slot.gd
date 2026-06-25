@@ -47,7 +47,7 @@ func check_child_type() -> bool:
 
 func _on_add_hamster_pressed() -> void:
 	if GScript.current_battery_value >= 100:
-		add_hamster(GScript.roster[0])
+		add_hamster(GScript.roster[0].duplicate(true))
 		GScript.current_battery_value -= 100
 		$AddHamsterMenu.hide()
 

@@ -4,10 +4,9 @@ extends Node2D
 signal picked_up
 
 @export var stats_menu : Control
-
 @export var stats: HamsterStats
-
 @export var traits : HamsterTraits
+
 var dragging: bool
 var amount: int = 0
 var drag_offset := Vector2.ZERO
@@ -20,6 +19,11 @@ var hamster_trait : Dictionary
 @onready var stamina: Label = %Stamina
 @onready var speed: Label = %Speed
 @onready var health: Label = %Health
+
+func _ready() -> void:
+	$AnimatedSprite2D.play("idle")
+	hamster_trait = traits.random_trait(stats)
+	setup()
 
 func _process(delta):
 	if dragging:
@@ -75,11 +79,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	target = null
 	print("Exited: ", area)
 
-func _ready() -> void:
-	$AnimatedSprite2D.play("idle")
-	hamster_trait = traits.random_trait(stats)
-	setup()
-
 # Sets everything up once hamster is fully ready so nothing triggers too early
 func setup() -> void:
 	$StatsMenu.stat_setup()
@@ -132,7 +131,7 @@ func update_ui() -> void:
 	#health updates
 	
 	#hover updates
-	health.text = "Health: %s" % [str(stats.health)]
+	health.text = "Health: %s" % [str(stats.max_health)]
 	stamina.text = "Stamina: %s" % [str(stats.stamina)]
 	speed.text = "Speed: %s" % [str(stats.speed)]
 
@@ -143,7 +142,6 @@ func increase_random_stat(amount: int):
 		1:
 			stats.speed += amount
 		2:
-			stats.health += amount
 			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
 	update_ui()
 
@@ -155,7 +153,6 @@ func increase_stat(stat_to_increase: int, amount: int):
 		1:
 			stats.speed += amount
 		2:
-			stats.health += amount
 			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
 	update_ui()
 

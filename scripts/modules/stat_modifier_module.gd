@@ -35,7 +35,6 @@ func _on_timeout() -> void:
 	else:
 		module_timer.stop()
 		bar.visible = false
-		hamster_ui.increase_random_stat(1)
 		GScript.complete_module_interaction.emit(hamster_ui)
 		hamster_ui.visible = true
 		_reset_module()
