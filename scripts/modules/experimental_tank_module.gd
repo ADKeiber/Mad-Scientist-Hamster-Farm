@@ -12,6 +12,9 @@ func start_module() -> void:
 	GScript.hamster_watts_min = GScript.hamster_watts_min + min_power_increase
 
 func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: ProgressBar) -> void:
+	if not callables.is_empty():
+		callables[0].call(hamster, timer, progress_bar)
+		return # this process can be updated to interact diffrently but this works for here
 	hamster_ui = hamster
 	bar = progress_bar
 	module_timer = timer

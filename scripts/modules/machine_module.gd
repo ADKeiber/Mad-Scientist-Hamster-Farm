@@ -3,19 +3,26 @@ extends Resource
 
 #TODO Some of these are only used when the module is interactable... 
 #We could seperate these into different classes at some point BUT not now
+@export_group("Base")
 @export var module_name: String
 @export var module_description: String
 @export var power_cost: int
 @export var texture: Texture2D
 @export var min_power_increase: int
 @export var project_module: bool # maybe should be an enum... BUT there are only 2 options right now... Project and Hamster Modules
-@export var installed: bool
-@export var interactable: bool
+@export var installed: bool = false
 
-@export var ticks_to_complete_interaction: int = 10 # This is how many ticks to complete the interaction... see GScript.global_tick_time
+#For interactable modules.. Not all will use these
+@export_group("Interactions")
+@export var interactable: bool = false
+@export var ticks_to_complete_interaction: int = 0 # This is how many ticks to complete the interaction... see GScript.global_tick_time
 
-#@export var upgrades_other_module: bool
-#@export var module_it_upgrades: MachineModule
+#Upgradeable modules.. not all modules will be upgradeable
+@export_group("Upgrades")
+@export var upgradeable: bool = false
+@export var module_to_upgrade: MachineModule
+@export var callables: Array[Callable]
+#TODO !! IDEA !! Can have an enum for upgrade type.. some replace functionality, some do additional functions
 
 func start_module() -> void:
 	pass

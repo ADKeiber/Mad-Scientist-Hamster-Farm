@@ -8,6 +8,7 @@
 size = Vector2(40.5, 39.5)
 
 [node name="MachineModuleSlot" type="Control" unique_id=231512727 groups=["MachineModule"]]
+z_index = 50
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 3
 anchor_right = 0.062000003
@@ -19,9 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_aqkmn")
-is_project_module = null
-disabled = null
-slot_number = null
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1872734217 groups=["MachineModule"]]
 position = Vector2(20, 19.5)

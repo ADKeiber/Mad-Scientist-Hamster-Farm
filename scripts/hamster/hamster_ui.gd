@@ -146,3 +146,24 @@ func increase_random_stat(amount: int):
 			stats.health += amount
 			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
 	update_ui()
+
+## stat_to_increase.. 0 = stamina, 1 = speed, 2 = health
+func increase_stat(stat_to_increase: int, amount: int):
+	match stat_to_increase:
+		0:
+			stats.stamina += amount
+		1:
+			stats.speed += amount
+		2:
+			stats.health += amount
+			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
+	update_ui()
+
+#weird function but needed to shut off most of the visiblity of the hamster but not ALL of it :)
+func make_mostly_invisible() -> void:
+	$AnimatedSprite2D.visible = false
+	$Area2D.visible = false
+	$StaminaBar.visible = false
+	$HealthPipsContainer.visible = false
+	#$AnimationPlayer.visible = false
+	$StatsMenu.visible = false
