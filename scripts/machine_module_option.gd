@@ -5,6 +5,7 @@ extends Control
 @onready var option_name: Label = $HBoxContainer/VBoxContainer/Name
 @onready var option_description: RichTextLabel = $HBoxContainer/VBoxContainer/Description
 var module: MachineModule
+
 func set_option(module: MachineModule) -> void:
 	self.module = module
 	option_texture_rect.texture = module.texture
@@ -18,7 +19,6 @@ func get_machine_module_slot() -> MachineModuleSlot:
 			return current
 		current = current.get_parent()
 	return null
-
 
 func _on_button_pressed() -> void:
 	print("Selected: ", option_name.text)

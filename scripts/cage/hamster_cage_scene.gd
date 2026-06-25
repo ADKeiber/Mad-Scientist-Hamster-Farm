@@ -7,6 +7,18 @@ const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 
 func _ready() -> void:
 	GScript.add_hamster_slot.connect(add_hamster_slot)
+	GScript.complete_module_interaction.connect(spit_out_hamster)
+
+func spit_out_hamster(hamster: HamsterUI) -> void:
+	var hamster_slots: Array[HamsterCageSlot]
+	for node in get_tree().get_nodes_in_group("CageSlot"):
+		if self.is_ancestor_of(node):
+			hamster_slots.append(node)
+	for slot in hamster_slots:
+		if slot.is_empty():
+			slot.reparent_hamster(hamster)
+			break
+
 
 # Called when the node enters the scene tree for the first time.
 func generate_slots_and_hamsters() -> void:

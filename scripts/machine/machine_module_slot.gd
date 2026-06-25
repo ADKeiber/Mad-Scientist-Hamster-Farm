@@ -11,6 +11,8 @@ var current_module: MachineModule
 var allow_hamster_reparent: bool = false
 var _hamster: HamsterUI
 
+var remaining_interaction_ticks: int
+
 # Called when the node enters the scene tree for the first time.
 #
 func _ready():
@@ -21,6 +23,7 @@ func _ready():
 	else:
 		modulate = Color.WHITE
 	GScript.unlock_module.connect(unlock)
+	$Timer.wait_time = GScript.global_tick_time 
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -51,6 +54,9 @@ func set_module(module:MachineModule) -> void:
 	current_module = module
 	module.installed = true
 	module.start_module()
+	$ProgressBar.max_value = module.ticks_to_complete_interaction
+	$ProgressBar.value = module.ticks_to_complete_interaction
+	remaining_interaction_ticks = module.ticks_to_complete_interaction
 	print("Installed!")
 
 func unlock(slot_to_unlock:int, is_project_slot: bool) -> void:
@@ -62,8 +68,19 @@ func unlock(slot_to_unlock:int, is_project_slot: bool) -> void:
 	else:
 		modulate = Color.WHITE
 
+#func interact_with_hamster(hamster: HamsterUI) -> void:
+	##Start timer
+	##
+
 func reparent_hamster(hamster: HamsterUI) -> void:
 	print("Reparent")
 	hamster.reparent(self)
 	hamster.position = self.size / 2.0
-	# TODO set sprite 2D (look at hamster wheel), make it visible, and animate it
+	current_module.interact_with_hamster(hamster, $Timer, $ProgressBar)
+
+func is_interactable() -> bool:
+	return current_module != null and current_module.interactable
+
+func _on_timer_timeout() -> void:
+	if remaining_interaction_ticks > 0:
+		pass

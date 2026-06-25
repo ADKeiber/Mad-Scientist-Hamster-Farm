@@ -6,6 +6,9 @@ signal win_game
 signal add_wheel
 signal add_hamster_slot
 signal update_battery_capacity
+signal complete_module_interaction(hamster:HamsterUI)
+
+var global_tick_time: float = 1.0 # the global tick for timers 
 
 var roster_limit: int = 4
 var num_of_wheels: int = 2

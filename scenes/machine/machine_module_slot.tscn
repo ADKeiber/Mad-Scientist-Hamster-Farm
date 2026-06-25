@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
 size = Vector2(40.5, 39.5)
 
-[node name="MachineModuleSlot" type="Control" unique_id=231512727]
+[node name="MachineModuleSlot" type="Control" unique_id=231512727 groups=["MachineModule"]]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 3
 anchor_right = 0.062000003
@@ -19,6 +19,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_aqkmn")
+is_project_module = null
+disabled = null
+slot_number = null
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872734217 groups=["MachineModule"]]
+position = Vector2(20, 19.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=568949697]
+shape = SubResource("RectangleShape2D_ujpuf")
 
 [node name="Panel" type="Panel" parent="." unique_id=895588721]
 layout_mode = 1
@@ -37,12 +46,6 @@ offset_right = 630.0
 offset_bottom = 630.0
 texture = ExtResource("2_2jdgv")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1872734217]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=568949697]
-position = Vector2(19.75, 19.75)
-shape = SubResource("RectangleShape2D_ujpuf")
-
 [node name="AvailableModulesPopup" parent="." unique_id=608306954 instance=ExtResource("3_2jdgv")]
 unique_name_in_owner = true
 visible = false
@@ -56,9 +59,26 @@ offset_right = -1.0
 offset_bottom = 112.5
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=383772167]
 visible = false
 
+[node name="Timer" type="Timer" parent="." unique_id=319548461]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=446905027]
+visible = false
+layout_mode = 0
+offset_top = 40.5
+offset_right = 40.0
+offset_bottom = 44.5
+min_value = 1.0
+max_value = 10.0
+step = 1.0
+value = 6.0
+fill_mode = 1
+show_percentage = false
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

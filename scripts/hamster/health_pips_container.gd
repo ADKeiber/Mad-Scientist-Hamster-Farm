@@ -11,8 +11,7 @@ func  setup_health() -> void:
 	max_health = hamster.stats.health
 	current_health = max_health
 	for i in max_health:
-		var heath_pip = health_pip_scene.instantiate()
-		add_child(heath_pip)
+		add_one_health()
 
 # Clears a health pip when damaged
 func take_damage() -> void:
@@ -21,5 +20,8 @@ func take_damage() -> void:
 	if current_health == 0:
 		death.emit()
 
-
-	
+func add_one_health() -> void:
+	#max_health += 1
+	#current_health += 1
+	var heath_pip = health_pip_scene.instantiate()
+	add_child(heath_pip)

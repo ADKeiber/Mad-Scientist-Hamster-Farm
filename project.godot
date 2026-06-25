@@ -44,6 +44,7 @@ CageSlot="Slot where the hamsters live"
 HamsterUI=""
 Wheel=""
 ModuleSelectorPopup=""
+MachineModule=""
 
 [gui]
 
