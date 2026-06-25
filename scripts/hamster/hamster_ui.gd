@@ -128,39 +128,20 @@ func _on_area_2d_mouse_exited() -> void:
 	stats_menu.hide()
 
 func update_ui() -> void:
-	#health updates
-	
-	#hover updates
 	health.text = "Health: %s" % [str(stats.max_health)]
 	stamina.text = "Stamina: %s" % [str(stats.stamina)]
 	speed.text = "Speed: %s" % [str(stats.speed)]
 
 func increase_random_stat(amount: int):
-	match randi_range(0, 2):
-		0:
-			stats.stamina += amount
-		1:
-			stats.speed += amount
-		2:
-			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
-	update_ui()
+	increase_stat(randi_range(0, 2), amount)
 
 ## stat_to_increase.. 0 = stamina, 1 = speed, 2 = health
 func increase_stat(stat_to_increase: int, amount: int):
 	match stat_to_increase:
-		0:
-			stats.stamina += amount
-		1:
-			stats.speed += amount
-		2:
-			$HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
+		0: stats.stamina += amount
+		1: stats.speed += amount
+		2: $HealthPipsContainer.add_one_health() # this would ideally go in update_ui BUT idk how to do that with the current setup
 	update_ui()
 
-#weird function but needed to shut off most of the visiblity of the hamster but not ALL of it :)
-func make_mostly_invisible() -> void:
-	$AnimatedSprite2D.visible = false
-	$Area2D.visible = false
-	$StaminaBar.visible = false
-	$HealthPipsContainer.visible = false
-	#$AnimationPlayer.visible = false
-	$StatsMenu.visible = false
+func heal() -> void:
+	$HealthPipsContainer.heal()

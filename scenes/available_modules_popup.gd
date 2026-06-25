@@ -1,5 +1,5 @@
 class_name AvailableModulesPopup
-extends PanelContainer
+extends PopupPanel
 
 const MACHINE_MODULE_OPTION = preload("res://scenes/machine/machine_module_option.tscn")
 @onready var options_container: VBoxContainer = %OptionsContainer

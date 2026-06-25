@@ -4,7 +4,7 @@ extends Control
 @export var is_project_module: bool
 @export var disabled: bool
 @export var slot_number: int
-@onready var module_option_popup: PanelContainer = %AvailableModulesPopup
+@onready var module_option_popup: PopupPanel = %AvailableModulesPopup
 @onready var texture_rect: TextureRect = $TextureRect
 
 var current_module: MachineModule
@@ -36,7 +36,16 @@ func _gui_input(event: InputEvent) -> void:
 					#z_index = 1
 				if module_option_popup.visible:
 					module_option_popup.visible = false
-				elif current_module == null:
+				elif not module_option_popup.visible and current_module == null:
+					#var parent = hamster.get_parent()
+	#var center_x = parent.global_position.x + parent.size.x / 2.0
+	#var x = center_x - interactable_menu.size.x / 2.0
+	#var y = parent.global_position.y
+					#module_option_popup.
+					var center_x = self.global_position.x + self.size.x / 2.0
+					var x = center_x - module_option_popup.size.x / 2.0
+					var y = self.global_position.y + self.size.y
+					module_option_popup.position = Vector2(x, y)
 					module_option_popup.visible = true
 				#module_option_popup.visible = not module_option_popup.visible
 				if module_option_popup.visible:

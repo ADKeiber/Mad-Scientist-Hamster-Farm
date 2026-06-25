@@ -15,9 +15,10 @@ func start_module() -> void:
 
 func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: ProgressBar) -> void:
 	await choose_stat(hamster)
-
 	print("UPGRADED expermintal tank!")
 	hamster_ui = hamster
+	hamster_ui.hamster_state = HamsterUI.State.RESTING
+	hamster_ui.change_states()
 	bar = progress_bar
 	module_timer = timer
 	bar.visible = true

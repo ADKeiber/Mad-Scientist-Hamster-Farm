@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_hinfj")
+ticks_to_heal = 2
 module_name = "Hamster Spa"
 module_description = "Allows for hamster to regen health"
 power_cost = 400

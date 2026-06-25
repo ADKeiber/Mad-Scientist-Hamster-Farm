@@ -22,3 +22,8 @@ func add_one_health() -> void:
 	hamster.stats.current_health += 1
 	var heath_pip = health_pip_scene.instantiate()
 	add_child(heath_pip)
+
+func heal() -> void:
+	hamster.stats.current_health += 1
+	var heath_pip = health_pip_scene.instantiate()
+	add_child(heath_pip)
