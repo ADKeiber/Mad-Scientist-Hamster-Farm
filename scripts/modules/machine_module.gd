@@ -17,7 +17,7 @@ extends Resource
 @export_group("Interactions")
 @export var interactable: bool = false
 #animation for interaction
-@export var sprite_sheet: Texture2D
+@export var sprite_frames: Array[AtlasTexture]
 @export var ticks_to_complete_interaction: int = 0 # This is how many ticks to complete the interaction... see GScript.global_tick_time
 @export var interact_power_cost: int
 #Upgradeable modules.. not all modules will be upgradeable

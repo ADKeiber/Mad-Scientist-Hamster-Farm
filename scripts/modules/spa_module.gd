@@ -16,6 +16,7 @@ func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: Progre
 	if hamster.stats.max_health == hamster.stats.current_health:
 		GScript.complete_module_interaction.emit(hamster)
 		return
+	hamster.visible = false
 	remaining_ticks_before_heal = ticks_to_heal
 	hamster_ui = hamster
 	bar = progress_bar

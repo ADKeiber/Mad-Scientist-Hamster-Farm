@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_aqkmn")
+fps = 6.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1872734217 groups=["MachineModule"]]
 position = Vector2(20, 19.5)
