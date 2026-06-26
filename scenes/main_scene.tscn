@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://d4fvryev4ss0q" path="res://resources/modules/project_module_1.tres" id="11_6u1mn"]
 [ext_resource type="Resource" uid="uid://bqy2wqx1wy4jo" path="res://resources/modules/project_module_2.tres" id="12_bcnxi"]
 [ext_resource type="Resource" uid="uid://d3fm55mf6ga0o" path="res://resources/modules/project_module_3.tres" id="13_7nt27"]
+[ext_resource type="PackedScene" uid="uid://car0adofhymyn" path="res://scenes/main_menu.tscn" id="14_adb74"]
 [ext_resource type="PackedScene" uid="uid://byh8jfcnyqs8m" path="res://scenes/machine/battery.tscn" id="18_bcnxi"]
 [ext_resource type="Texture2D" uid="uid://cdgdr27614iyr" path="res://assets/tiles-sets/wood and brick tiles.png" id="19_7nt27"]
 [ext_resource type="Texture2D" uid="uid://g7hssyfeh11j" path="res://assets/tiles-sets/MountTileset.png" id="20_k6f3i"]
@@ -110,6 +111,10 @@ script = ExtResource("1_pu3yx")
 hamster_options = Array[ExtResource("2_rt2n2")]([ExtResource("3_c16ls")])
 all_modules = Array[ExtResource("4_r6p65")]([ExtResource("5_si52b"), ExtResource("6_01n6w"), ExtResource("7_6u1mn"), ExtResource("8_bcnxi"), ExtResource("9_7nt27"), ExtResource("10_k6f3i"), ExtResource("11_6u1mn"), ExtResource("12_bcnxi"), ExtResource("13_7nt27")])
 metadata/_edit_horizontal_guides_ = [386.0]
+
+[node name="MainMenu" parent="." unique_id=620466314 instance=ExtResource("14_adb74")]
+process_mode = 3
+layout_mode = 1
 
 [node name="MachineScene" parent="." unique_id=1183329259 instance=ExtResource("1_w2twt")]
 layout_mode = 1
