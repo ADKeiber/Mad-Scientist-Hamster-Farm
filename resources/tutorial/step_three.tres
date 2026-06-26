@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TutorialStep" format=3 uid="uid://ce5kfbblqefqd"]
+
+[ext_resource type="Script" uid="uid://cwb3vuo1m787c" path="res://scripts/tutorial_step.gd" id="1_x6wsy"]
+
+[resource]
+script = ExtResource("1_x6wsy")
+text = "Now that we have someone to do our dirty work let's put them to work! \\nDrag and drop the hamster onto a wheel and PUT IT TO WORK! \\n"
+step_number = 3
+metadata/_custom_type_script = "uid://cwb3vuo1m787c"

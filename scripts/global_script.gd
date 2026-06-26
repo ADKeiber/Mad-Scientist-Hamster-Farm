@@ -11,6 +11,11 @@ signal restart_game
 signal lose_game
 signal complete_project_module(project_module_num: int)
 
+#tutorial signals
+signal start_tutorial
+signal end_tutorial
+signal complete_step(step_num: int)
+
 var global_tick_time: float = 1.0 # the global tick for timers 
 var roster_limit: int = 4
 var num_of_wheels: int = 2

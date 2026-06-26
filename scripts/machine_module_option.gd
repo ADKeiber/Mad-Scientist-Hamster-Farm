@@ -7,12 +7,14 @@ extends Control
 var module: MachineModule
 var disabled: bool = false
 @onready var cost: RichTextLabel = %Cost
+@onready var minimum_power_increase: RichTextLabel = %MinimumPowerIncrease
 
 func set_option(module: MachineModule) -> void:
 	self.module = module
 	option_texture_rect.texture = module.texture
 	option_name.text = module.module_name
 	option_description.text = module.module_description
+	minimum_power_increase.text = "+%s" % str(module.min_power_increase)
 	cost.text = str(module.power_cost)
 
 func get_machine_module_slot() -> MachineModuleSlot:
