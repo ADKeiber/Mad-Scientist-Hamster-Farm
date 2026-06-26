@@ -13,6 +13,10 @@ var _hamster: HamsterUI
 
 var remaining_interaction_ticks: int
 
+@export var fps := 8.0
+var _frame := 0
+var _timer := 0.0
+
 func _ready():
 	GScript.close_popups.connect(close_popup)
 	z_index = 1
@@ -22,6 +26,21 @@ func _ready():
 		modulate = Color.WHITE
 	GScript.unlock_module.connect(unlock)
 	$Timer.wait_time = GScript.global_tick_time 
+
+func _process(delta: float) -> void:
+	if current_module == null:
+		return
+	# No hamster? Show static image.
+	if find_hamster_ui(self) == null:
+		texture_rect.texture = current_module.texture
+		return
+	# Animate.
+	_timer += delta
+	
+	if _timer >= 1.0 / fps:
+		_timer -= 1.0 / fps
+		_frame = (_frame + 1) % current_module.sprite_frames.size()
+		texture_rect.texture = current_module.sprite_frames[_frame]
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -86,3 +105,12 @@ func is_interactable() -> bool:
 func _on_timer_timeout() -> void:
 	if remaining_interaction_ticks > 0:
 		pass
+		
+func find_hamster_ui(node: Node) -> HamsterUI:
+	if node is HamsterUI:
+		return node
+	for child in node.get_children():
+		var result := find_hamster_ui(child)
+		if result:
+			return result
+	return null

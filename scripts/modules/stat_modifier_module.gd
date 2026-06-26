@@ -15,6 +15,7 @@ func start_module() -> void:
 	module_to_upgrade.callables.append(interact_with_hamster)
 
 func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: ProgressBar) -> void:
+	hamster.visible = false
 	await choose_stat(hamster)
 	print("UPGRADED expermintal tank!")
 	hamster_ui = hamster
