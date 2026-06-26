@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdcj6418jv7qb"
-path="res://.godot/imported/wood tile.png-5080d38d3e9cecfb1ef01ae14279fa0e.ctex"
+uid="uid://b4bc5iqqs0lc8"
+path="res://.godot/imported/experimental tank on.png-70db2bf53d9cabd726bb10479cc2418f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wood tile.png"
-dest_files=["res://.godot/imported/wood tile.png-5080d38d3e9cecfb1ef01ae14279fa0e.ctex"]
+source_file="res://assets/modules/experimental tank on.png"
+dest_files=["res://.godot/imported/experimental tank on.png-70db2bf53d9cabd726bb10479cc2418f.ctex"]
 
 [params]
 
