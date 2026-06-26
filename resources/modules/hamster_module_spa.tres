@@ -5,10 +5,12 @@
 
 [resource]
 script = ExtResource("1_hinfj")
+ticks_to_heal = 2
 module_name = "Hamster Spa"
 module_description = "Allows for hamster to regen health"
 power_cost = 400
 texture = ExtResource("2_cfjb4")
 min_power_increase = 10
 interactable = true
+interact_power_cost = 10
 metadata/_custom_type_script = "uid://ctm75tktsh6it"

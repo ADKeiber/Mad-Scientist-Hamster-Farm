@@ -3,6 +3,7 @@ extends Control
 const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 var _hamster : HamsterUI
 
+
 func add_hamster(stats:HamsterStats) -> void:
 	var hamster: HamsterUI = HAMSTER.instantiate()
 	#TODO set hamster_ui sprite possibly?
@@ -30,3 +31,31 @@ func hamster_picked_up() -> void:
 	if _hamster.picked_up.is_connected(self.hamster_picked_up): 
 		_hamster.picked_up.disconnect(self.hamster_picked_up)
 	_hamster = null 
+
+func _on_gui_input(event: InputEvent) -> void: #opens add hamster menu
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if check_child_type() == false:
+				if get_tree().get_node_count_in_group("HamsterUI") < GScript.roster_limit:
+					$AddHamsterMenu.show()
+
+func check_child_type() -> bool:
+	for child in self.get_children():
+		if is_instance_of(child, HamsterUI):
+			return true
+	return false
+
+func _on_add_hamster_pressed() -> void:
+	if GScript.current_battery_value >= 100:
+		add_hamster(GScript.roster[0].duplicate(true))
+		GScript.current_battery_value -= 100
+		$AddHamsterMenu.hide()
+
+@export var button : Button
+func _process(delta: float) -> void: #disables button while curent power is too low to purchase
+	if GScript.current_battery_value < 100:
+		button.disabled = true
+	else: button.disabled = false
+
+func is_empty() -> bool:
+	return _hamster == null
