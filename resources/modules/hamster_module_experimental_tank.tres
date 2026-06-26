@@ -11,4 +11,7 @@ power_cost = 100
 texture = ExtResource("2_tm5ds")
 min_power_increase = 10
 interactable = true
+ticks_to_complete_interaction = 7
+interact_power_cost = 10
+upgradeable = true
 metadata/_custom_type_script = "uid://iat32wvxnly2"

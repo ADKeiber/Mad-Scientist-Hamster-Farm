@@ -78,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pu3yx")
-starting_hamsters = Array[ExtResource("2_rt2n2")]([ExtResource("3_c16ls"), ExtResource("3_c16ls")])
+hamster_options = Array[ExtResource("2_rt2n2")]([ExtResource("3_c16ls")])
 all_modules = Array[ExtResource("4_r6p65")]([ExtResource("5_si52b"), ExtResource("6_01n6w"), ExtResource("7_6u1mn"), ExtResource("8_bcnxi"), ExtResource("9_7nt27"), ExtResource("10_k6f3i"), ExtResource("11_6u1mn"), ExtResource("12_bcnxi"), ExtResource("13_7nt27")])
 metadata/_edit_horizontal_guides_ = [386.0]
 

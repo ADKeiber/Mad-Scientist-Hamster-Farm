@@ -39,17 +39,15 @@ func _on_gui_input(event: InputEvent) -> void: #opens add hamster menu
 				if get_tree().get_node_count_in_group("HamsterUI") < GScript.roster_limit:
 					$AddHamsterMenu.show()
 
-
 func check_child_type() -> bool:
 	for child in self.get_children():
 		if is_instance_of(child, HamsterUI):
 			return true
 	return false
 
-
 func _on_add_hamster_pressed() -> void:
 	if GScript.current_battery_value >= 100:
-		add_hamster(GScript.roster[0])
+		add_hamster(GScript.roster[0].duplicate(true))
 		GScript.current_battery_value -= 100
 		$AddHamsterMenu.hide()
 
@@ -58,3 +56,6 @@ func _process(delta: float) -> void: #disables button while curent power is too 
 	if GScript.current_battery_value < 100:
 		button.disabled = true
 	else: button.disabled = false
+
+func is_empty() -> bool:
+	return _hamster == null

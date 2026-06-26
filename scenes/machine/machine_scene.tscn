@@ -92,17 +92,20 @@ theme_override_constants/separation = 34
 alignment = 1
 
 [node name="MachineModuleSlot" parent="MachineRows/project/ProjectModuleRow1" unique_id=769799803 instance=ExtResource("1_r258f")]
+z_index = 10
 layout_mode = 2
 is_project_module = true
 slot_number = 1
 
 [node name="MachineModuleSlot2" parent="MachineRows/project/ProjectModuleRow1" unique_id=1934691684 instance=ExtResource("1_r258f")]
+z_index = 10
 layout_mode = 2
 is_project_module = true
 disabled = true
 slot_number = 2
 
 [node name="MachineModuleSlot3" parent="MachineRows/project/ProjectModuleRow1" unique_id=168099881 instance=ExtResource("1_r258f")]
+z_index = 10
 layout_mode = 2
 is_project_module = true
 disabled = true
