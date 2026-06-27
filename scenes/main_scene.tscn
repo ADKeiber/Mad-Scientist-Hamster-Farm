@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://clpas1gryqu2e" path="res://scenes/you_win_popup.tscn" id="24_u0fll"]
 [ext_resource type="AudioStream" uid="uid://bhrmwy75owsr2" path="res://assets/nojisuma-going_on_foot-133469.mp3" id="25_u0fll"]
 [ext_resource type="PackedScene" uid="uid://bk8gcdrr5j61m" path="res://scenes/tutorial_overlay.tscn" id="26_6p3nn"]
+[ext_resource type="PackedScene" uid="uid://dj8wgxbtfm5bh" path="res://scenes/volume_bar.tscn" id="27_k67gn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6f3i"]
 texture = ExtResource("19_7nt27")
@@ -212,3 +213,11 @@ offset_right = 387.0
 offset_bottom = 158.0
 theme_override_font_sizes/font_size = 26
 text = "*Paused*"
+
+[node name="Volume Bar" parent="." unique_id=1215559566 instance=ExtResource("27_k67gn")]
+top_level = true
+layout_mode = 1
+offset_left = 470.0
+offset_top = 6.0
+offset_right = -13.0
+offset_bottom = -338.0
