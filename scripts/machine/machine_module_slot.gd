@@ -30,10 +30,11 @@ func _ready():
 func _process(delta: float) -> void:
 	if current_module == null:
 		return
-	# No hamster? Show static image.
-	if find_hamster_ui(self) == null:
-		texture_rect.texture = current_module.texture
-		return
+	if not current_module.project_module:
+		# No hamster? Show static image.
+		if find_hamster_ui(self) == null:
+			texture_rect.texture = current_module.texture
+			return
 	# Animate.
 	_timer += delta
 	
