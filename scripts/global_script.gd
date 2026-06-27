@@ -17,7 +17,7 @@ signal end_tutorial
 signal complete_step(step_num: int)
 
 var global_tick_time: float = 1.0 # the global tick for timers 
-var roster_limit: int = 3
+var roster_limit: int = 2
 var num_of_wheels: int = 2
 var roster: Array[HamsterStats] #this is for the hamsters we actually have
 var roster_size: int = 1
@@ -39,7 +39,7 @@ var in_tutorial: bool = false
 var purchased_hamster: bool = false
 
 func reset_state() -> void:
-	roster_limit = 3
+	roster_limit = 2
 	num_of_wheels = 2
 	global_tick_time = 1.0
 	roster = []
