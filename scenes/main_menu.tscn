@@ -308,7 +308,23 @@ offset_bottom = 103.0
 theme_override_font_sizes/font_size = 24
 text = "The Hamster Engine"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1916611715]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 201.0
+offset_right = 387.0
+offset_bottom = 231.0
+
+[node name="TutorialSkip" type="Label" parent="Panel/HBoxContainer" unique_id=1599510378]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Skip Tutorial"
+
+[node name="CheckBox" type="CheckBox" parent="Panel/HBoxContainer" unique_id=1887673926]
+layout_mode = 2
+
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=40128218]
 stream = ExtResource("5_8ln24")
 
 [connection signal="pressed" from="Panel/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="toggled" from="Panel/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
