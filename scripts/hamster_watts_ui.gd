@@ -1,9 +1,9 @@
 extends Control
 
-@onready var current : Label = $HBoxContainer/VBoxContainer/Current
-@onready var minimum : Label = $HBoxContainer/VBoxContainer/Minimum
-@onready var modifier : Label = $HBoxContainer/VBoxContainer2/Modifier
-@onready var amount : Label = $HBoxContainer/VBoxContainer2/Amount
+@export var current : Label 
+@export var minimum : Label
+@export var modifier : Label 
+@export var amount : Label 
 
 # Gets current Hamster Watts and updates ui
 func _process(delta: float) -> void:

@@ -158,9 +158,10 @@ grow_vertical = 0
 [node name="HamsterWattsUI" parent="." unique_id=113782197 instance=ExtResource("7_c16ls")]
 process_mode = 1
 layout_mode = 0
-offset_left = 22.0
-offset_top = 110.0
-offset_bottom = 220.0
+offset_left = 27.0
+offset_top = 49.0
+offset_right = 150.0
+offset_bottom = 174.0
 
 [node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
 process_mode = 1
