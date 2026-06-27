@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/hamster/Hamster Idle.png" id="2_8ln24"]
 [ext_resource type="Texture2D" uid="uid://b32weeq21pn1n" path="res://assets/machine/Machine on.png" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dc0ybyr363rp4" path="res://scenes/wheel/hamster_wheel.tscn" id="2_wu84c"]
+[ext_resource type="AudioStream" uid="uid://b1whejmiu6kjk" path="res://assets/clicking-interface-select.mp3" id="5_8ln24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw7gp"]
 bg_color = Color(0.15487584, 0.15487605, 0.1548759, 1)
@@ -306,5 +307,8 @@ offset_right = 436.0
 offset_bottom = 103.0
 theme_override_font_sizes/font_size = 24
 text = "The Hamster Engine"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=40128218]
+stream = ExtResource("5_8ln24")
 
 [connection signal="pressed" from="Panel/StartGame" to="." method="_on_start_game_pressed"]

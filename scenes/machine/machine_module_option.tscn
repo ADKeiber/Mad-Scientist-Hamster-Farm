@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdkjxlugjkrcs" path="res://scripts/machine_module_option.gd" id="1_7qfeb"]
 [ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_qboyq"]
+[ext_resource type="AudioStream" uid="uid://b1whejmiu6kjk" path="res://assets/clicking-interface-select.mp3" id="3_v660u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -127,5 +128,8 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycuyt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v660u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48bqb")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1635240723]
+stream = ExtResource("3_v660u")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

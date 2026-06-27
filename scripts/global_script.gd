@@ -20,13 +20,13 @@ var global_tick_time: float = 1.0 # the global tick for timers
 var roster_limit: int = 3
 var num_of_wheels: int = 2
 var roster: Array[HamsterStats] #this is for the hamsters we actually have
-var roster_size: int = 2
+var roster_size: int = 1
 var hamster_options: Array[HamsterStats] # this is for different Types of hamsters
 var power_stored : int
 var hamster_watts_produced : int = 0
 var hamster_watts_min : int = 10
 var battery_capacity: int = 1000
-var current_battery_value : int = 200:
+var current_battery_value : int = 150:
 	set(value): #keeps the value within range
 		if value <= 0:
 			lose_game.emit()
@@ -39,17 +39,17 @@ var in_tutorial: bool = false
 var purchased_hamster: bool = false
 
 func reset_state() -> void:
-	roster_limit = 4
+	roster_limit = 3
 	num_of_wheels = 2
 	global_tick_time = 1.0
 	roster = []
-	roster_size = 2
+	roster_size = 1
 	hamster_options = []
 	power_stored = 0
 	hamster_watts_produced = 0
 	hamster_watts_min = 10
 	battery_capacity = 1000
-	current_battery_value = 100
+	current_battery_value = 150
 	for module in all_modules:
 		module.installed = false
 	

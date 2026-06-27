@@ -18,6 +18,7 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 		GScript.hamster_watts_produced += _hamster.stats.speed * 10
 		hamster.change_states()
 	hamster.picked_up.connect(self.hamster_picked_up)
+	hamster.damage.connect(self.take_damage)
 	
 	
 	
@@ -32,4 +33,10 @@ func hamster_picked_up() -> void:
 	if _hamster.picked_up.is_connected(self.hamster_picked_up): 
 		_hamster.picked_up.disconnect(self.hamster_picked_up)
 	_hamster = null
+	
+func take_damage() -> void:
+	$"Hamster Wheel".modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	$"Hamster Wheel".modulate = Color.WHITE
+	$Squeak.play()
 	

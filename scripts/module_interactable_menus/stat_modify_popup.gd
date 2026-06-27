@@ -17,12 +17,14 @@ func _on_speed_pressed() -> void:
 	option_selected = true
 	self.visible = false
 	stat_selected.emit(1)
+	$Click.play()
 
 func _on_stamina_pressed() -> void:
 	hamster_ui.increase_stat(0,1)
 	option_selected = true
 	self.visible = false
 	stat_selected.emit(0)
+	$Click.play()
 
 func _on_health_pressed() -> void:
 	hamster_ui.increase_stat(2, 1)
@@ -37,3 +39,4 @@ func _on_popup_hide() -> void:
 		return
 	hamster_ui.visible = true
 	GScript.complete_module_interaction.emit(hamster_ui)
+	$Click.play()

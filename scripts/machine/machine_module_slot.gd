@@ -64,6 +64,7 @@ func _gui_input(event: InputEvent) -> void:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100
 				accept_event()
+				$Click.play()
 
 func close_popup() -> void:
 	z_index = 10

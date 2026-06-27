@@ -15,6 +15,7 @@ func _on_start_game_pressed() -> void:
 	self.hide()
 	#GScript.start_tutorial.emit()
 	get_tree().paused = false
+	$Click.play()
 
 func reset_animation() -> void:
 	#again.. needed because otherwise the pipes were disjointed and on different frames
