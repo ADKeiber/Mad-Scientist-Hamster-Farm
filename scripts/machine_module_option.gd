@@ -31,6 +31,7 @@ func _on_button_pressed() -> void:
 	machine_slot_ancestor.set_module(self.module)
 	GScript.current_battery_value -= module.power_cost
 	GScript.close_popups.emit()
+	$Click.play()
 
 func disable() -> void:
 	disabled = true

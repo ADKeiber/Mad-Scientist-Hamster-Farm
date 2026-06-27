@@ -50,6 +50,7 @@ func _on_add_hamster_pressed() -> void:
 		add_hamster(GScript.roster[0].duplicate(true))
 		GScript.current_battery_value -= 100
 		$AddHamsterMenu.hide()
+		$Click.play()
 
 @export var button : Button
 func _process(delta: float) -> void: #disables button while curent power is too low to purchase

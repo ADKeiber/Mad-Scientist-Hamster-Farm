@@ -16,6 +16,7 @@ func power_wheel() -> void:
 	if sound_active:
 		$RunningSound.play()
 	wheel_on = true
+
 	# Stops the animations and rehides hamster
 func power_off() -> void:
 	$BaseWheel.pause()

@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ww76rfosu8ww" path="res://assets/tiles-sets/basicwires.png" id="21_xdqt8"]
 [ext_resource type="PackedScene" uid="uid://d1yqj42rjsxh5" path="res://scenes/you_lose_popup.tscn" id="23_to7gp"]
 [ext_resource type="PackedScene" uid="uid://clpas1gryqu2e" path="res://scenes/you_win_popup.tscn" id="24_u0fll"]
+[ext_resource type="AudioStream" uid="uid://bhrmwy75owsr2" path="res://assets/nojisuma-going_on_foot-133469.mp3" id="25_u0fll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6f3i"]
 texture = ExtResource("19_7nt27")
@@ -178,3 +179,10 @@ layout_mode = 1
 visible = false
 z_index = 4000
 layout_mode = 1
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1893195999]
+process_mode = 3
+stream = ExtResource("25_u0fll")
+volume_db = -1.638
+autoplay = true
+parameters/looping = true

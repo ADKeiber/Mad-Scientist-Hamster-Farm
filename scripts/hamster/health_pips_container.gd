@@ -1,5 +1,6 @@
 extends HBoxContainer
 signal death
+signal damage
 
 @onready var health_pip_scene = preload("res://scenes/hamster/health_pip.tscn")
 @onready var hamster : HamsterUI = $".."
@@ -14,6 +15,7 @@ func  setup_health() -> void:
 func take_damage() -> void:
 	hamster.stats.current_health -= 1
 	get_child(0).queue_free()
+	damage.emit()
 	if hamster.stats.current_health == 0:
 		death.emit()
 
