@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsn770xlbcqbb" path="res://scripts/module_interactable_menus/stat_modify_popup.gd" id="1_353bf"]
 [ext_resource type="Texture2D" uid="uid://cdatwd1hf0aqq" path="res://assets/hamster/Hamster Still.png" id="2_cxf7u"]
+[ext_resource type="AudioStream" uid="uid://b1whejmiu6kjk" path="res://assets/clicking-interface-select.mp3" id="3_cxf7u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67mk2"]
 bg_color = Color(0.26666668, 0.26666668, 0.4117647, 1)
@@ -13,6 +14,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_67mk2")
 bg_color = Color(0.6, 0.6, 0.7176471, 1)
 
 [node name="StatModifyPopup" type="PopupPanel" unique_id=1458865801]
+process_mode = 3
 oversampling_override = 1.0
 size = Vector2i(140, 154)
 visible = true
@@ -54,6 +56,12 @@ text = "Stamina"
 layout_mode = 2
 text = "Speed"
 
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=784570950]
+stream = ExtResource("3_cxf7u")
+volume_db = -18.0
+pitch_scale = 0.4
+
+[connection signal="popup_hide" from="." to="." method="_on_popup_hide"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Health" to="." method="_on_health_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Stamina" to="." method="_on_stamina_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Speed" to="." method="_on_speed_pressed"]

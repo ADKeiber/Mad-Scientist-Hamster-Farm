@@ -30,10 +30,11 @@ func _ready():
 func _process(delta: float) -> void:
 	if current_module == null:
 		return
-	# No hamster? Show static image.
-	if find_hamster_ui(self) == null:
-		texture_rect.texture = current_module.texture
-		return
+	if not current_module.project_module:
+		# No hamster? Show static image.
+		if find_hamster_ui(self) == null:
+			texture_rect.texture = current_module.texture
+			return
 	# Animate.
 	_timer += delta
 	
@@ -60,10 +61,12 @@ func _gui_input(event: InputEvent) -> void:
 					var y = self.global_position.y + self.size.y
 					module_option_popup.position = Vector2(x, y)
 					module_option_popup.visible = true
+					get_tree().paused = true
 				if module_option_popup.visible:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100
 				accept_event()
+				$Click.play()
 
 func close_popup() -> void:
 	z_index = 10

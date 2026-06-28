@@ -219,8 +219,7 @@ autowrap_mode = 2
 
 [node name="Squeak" type="AudioStreamPlayer2D" parent="." unique_id=1730146679]
 stream = ExtResource("8_7g52f")
-
-[node name="AudioBus" type="Node2D" parent="." unique_id=2103181659]
+volume_db = 0.5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
@@ -229,6 +228,7 @@ stream = ExtResource("8_7g52f")
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="damage" from="StaminaBar" to="." method="_on_stamina_bar_damage"]
 [connection signal="timeout" from="StaminaBar/Timer" to="StaminaBar" method="_on_timer_timeout"]
+[connection signal="damage" from="HealthPipsContainer" to="." method="_on_health_pips_container_damage"]
 [connection signal="death" from="HealthPipsContainer" to="." method="_on_health_pips_container_death"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="visibility_changed" from="StatsMenu" to="StatsMenu" method="_on_visibility_changed"]

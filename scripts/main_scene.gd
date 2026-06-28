@@ -1,14 +1,15 @@
 class_name MainScene
 extends Control
-
+signal start_tutorial
 @export var hamster_options: Array[HamsterStats]
 @export var all_modules: Array[MachineModule]
+@export var tutorial_1: TutorialStep
 @onready var hamster_cage_scene: HamsterCageScene = %HamsterCageScene
 @onready var hamster_wheels_scene: HamsterWheelsScene = %HamsterWheelsScene
 var starting_hamsters: Array[HamsterStats]
-@onready var you_lose_popup: YouLosePopup = %YouLosePopup
-@onready var you_win_popup: YouWinPopup = %YouWinPopup
 
+
+const STEP_ONE = preload("res://resources/tutorial/step_one.tres")
 func _ready() -> void:
 	GScript.hamster_options = hamster_options
 	for i in GScript.roster_size:
@@ -18,7 +19,10 @@ func _ready() -> void:
 	#hamster_wheels_scene.generate_wheels()
 	GScript.all_modules = all_modules
 	GScript.restart_game.connect(restart)
-
+	GScript.start_tutorial.connect(tutorial_setup)
+	start_tutorial.connect(show_tutorial)
+	GScript.first_hamster_purchased.connect(close_instruction)
+	
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -32,3 +36,24 @@ func restart() -> void:
 	GScript.reset_state()
 	get_tree().reload_current_scene()
 	print("RESET")
+
+func tutorial_setup() -> void:
+	print("LETS GO TUTORIAL")
+	hamster_cage_scene.process_mode = Node.PROCESS_MODE_ALWAYS
+	#$Battery.process_mode = Node.PROCESS_MODE_ALWAYS
+
+func show_tutorial() -> void:
+	$TutorialVoiceOver.play()
+	$TutorialScientist.visible = true
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if not get_tree().paused and $MainMenu.visible == false:
+			get_tree().paused = true
+			$Paused.show()
+		elif get_tree().paused and $MainMenu.visible == false:
+			get_tree().paused = false
+			$Paused.hide()
+
+func close_instruction() -> void:
+	$BuyHamsterContainer.visible = false

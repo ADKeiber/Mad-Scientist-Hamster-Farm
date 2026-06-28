@@ -2,6 +2,7 @@ class_name HamsterUI
 extends Node2D
 
 signal picked_up
+signal damage
 
 @export var stats_menu : Control
 @export var stats: HamsterStats
@@ -154,3 +155,7 @@ func increase_stat(stat_to_increase: int, amount: int):
 
 func heal() -> void:
 	$HealthPipsContainer.heal()
+
+
+func _on_health_pips_container_damage() -> void:
+	damage.emit()
